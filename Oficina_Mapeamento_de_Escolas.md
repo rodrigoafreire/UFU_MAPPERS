@@ -121,6 +121,49 @@ Um possível erro é quando o sistema não identifica a instalação do *Jupyter
 
 ## Parte 2 - Levantamento e tratamento dos dados
 
+### 2.a Adquirindo os dados
+
+Os dados utilizados nessa oficina foram obtidos no site do INEP (Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira), que é uma autarquia federal vinculada ao Ministério da Educação (MEC). O INEP é responsável pela coleta, análise e divulgação de informações sobre a educação brasileira.
+Para acessa-los basta clicar no link abaixo: 
+
+[INEP - Acessar Microdados ](https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/censo-escolar/resultados)
+
+![Tela inicial do site do INEP](Imagens/INEP.png)
+
+O arquivo zip baixado contém 3 subpastas. São elas:
+
+1. Anexos: Que contém o dicionário de dados, que é um documento que descreve os dados contidos no arquivo.
+2. Dados: Que contém os dados propriamente ditos, em formato CSV.
+3. Leia-me: Que contém um arquivo de texto com instruções para a leitura dos dados.
+
+![Arquivos INEP](Imagens/arquivo_inep.png)
+
+Para nós, o mais importante é a pasta Dados, que contém os dados em formato CSV. CSV é um formato de arquivo de texto simples que armazena dados em uma tabela, com **cada linha representando uma linha da tabela e cada coluna representando uma coluna da tabela.** Os dados são separados por vírgulas, daí o nome "CSV" (valores separados por vírgula). Além disso, os **Anexos** ajudam a entender o significado de cada coluna.
+
+É possível abrir o arquivo CSV em uma planilha, como o Microsoft Excel ou o Google Sheets. Para isso, basta abrir o arquivo CSV em uma planilha e os dados serão exibidos em uma tabela. No entanto, arquivos pesados podem travar o Excel ou o Sheets. Além disso, esses programas não são adequados para análise de dados, pois não oferecem recursos de análise de dados avançados. 
+
+No nosso caso, o arquivo csv possui 125mb, o que é um tamanho considerável. Por isso, utilizaremos o Python para ler e analisar os dados, por meio da biblioteca Pandas.
+
+### 2.b Entendendo os dados
+
+Primeiramente, vou abrir o arquivo *dicionário_dados_educação_básica.xlsx* para entender o significado de cada coluna e ter uma visão geral dos dados.
+O arquivo fica localizado em: 
+``` INEP\Anexos\ANEXO I...\dicionário_dados_educação_básica.xlsx ```
+
+Uma leitura rápida me indica que existem cerca de 400 colunas. Ou seja, existem muitas informações que podem ser retiradas desse arquivo, incluindo a localização (endereço), número de alunos, número de professores, número de salas de aula etc.
+
+### 2.c Abrindo o arquivo CSV com Pandas
+
+Agora, vamos abrir o arquivo CSV com a biblioteca Pandas. Para isso, abra o prompt de comando e digite:
+
+```python```
+
+```import pandas as pd```
+
+```df = pd.read_csv('C:\Users\...\ESCOLAS.CSV', sep='|', encoding='latin-1')```
+
+```df.head()```
+
 
 
 ## Observações
