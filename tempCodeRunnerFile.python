@@ -1,0 +1,27 @@
+import pandas as pd
+df_mun = pd.read_csv("E:/GitHub/UFU_MAPPERS/Microdados do Censo Escolar da Educação Básica 2022/dados/microdados_uberlandia.csv", delimiter = ';', encoding = 'iso-8859-1', low_memory=False)
+
+df_mun['CO_ENTIDADE'].count()
+
+df_mun['TP_DEPENDENCIA'].value_counts()
+
+
+df_mun['IN_BAS'].value_counts()
+
+colunas = ['QT_MAT_BAS', 'QT_MAT_PROF', 'QT_MAT_PROF_TEC', 'QT_MAT_EJA']
+
+df_mun[colunas] = df_mun[colunas].fillna(0) 
+
+print(df_mun['QT_MAT_BAS'])
+
+df_mun.groupby('CO_ENTIDADE')[colunas].sum()
+
+print(df_mun['QT_MAT_BAS'])
+
+#df_mun['QT_ALUNOS_TOTAL'] = df_mun['QT_MAT_BAS'] + df_mun['QT_MAT_PROF'] + df_mun['QT_MAT_PROF_TEC'], df_mun['QT_MAT_EJA']
+
+total = pd.DataFrame()
+
+df_mun['QT_ALUNOS_TOTAL'] = df_mun[colunas].sum(axis=1)
+
+print(df_mun['QT_ALUNOS_TOTAL'])
