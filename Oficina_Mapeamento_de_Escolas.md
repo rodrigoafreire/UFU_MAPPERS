@@ -233,16 +233,15 @@ Antes vamos criar uma lista com as colunas que queremos somar:
     
 Agora vamos somar as colunas e criar uma nova coluna chamada QT_ALUNOS_TOTAL:
 
-    df_mun['QT_ALUNOS_TOTAL'] = df_mun.groupby('CO_ENTIDADE')[colunas].sum()
+    df_mun['QT_ALUNOS_TOTAL'] = df_mun[colunas].sum(axis=1)
 
-Entao vamos ver o resultado para a quantidade de alunos para a escola com código 31000001:
+Vamos ver a quantidade de alunos na **ESCOLA DE EDUCACAO BASICA DA UFU**. Se quisermos ver apenas a coluna da soma:
     
-    df_mun.loc[df_mun['CO_ENTIDADE'] == 31000001]
+    df_mun.loc[df_mun['CO_ENTIDADE'] == 31166545]['QT_ALUNOS_TOTAL']
 
-se quisermos ver apenas a coluna da soma:
-    
-    df_mun.loc[df_mun['CO_ENTIDADE'] == 31000001]['QT_ALUNOS_TOTAL']
+**Pronto, agora já fizemos uma boa exploração inicial. Vamos salvar os dados com a coluna nova em um novo arquivo .CSV**
 
+    df_mun.to_csv('C:/Users/.../ESCOLAS_UBERLANDIA_PARTE_2.CSV')
 
 
 
