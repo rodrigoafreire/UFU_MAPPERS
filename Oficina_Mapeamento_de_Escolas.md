@@ -246,6 +246,29 @@ Vamos ver a quantidade de alunos na **ESCOLA DE EDUCACAO BASICA DA UFU**. Se qui
     df_mun.to_csv('C:/Users/.../ESCOLAS_UBERLANDIA_PARTE_2.CSV')
 
 
+### 2.f Última verificação
+
+Agora que temos os dados já selecionados para Uberlandia e fizemos uma rápida exploração, vamos verificar novamente as variáveis que temos disponíveis. Para isso, vamos abrir o arquivo *dicionário_dados_educação_básica.xlsx* para entender o significado de cada coluna e ter uma visão geral dos dados.
+
+Ao analisar as variáveis, observamos que uma das variáveis corresponde à **Situação de funcionamento** das escolas. Ou seja, ela indica se uma escola está em funcionamento, paralisada, extinta no ano do censo, ou extinta em anos anteriores. Para o nosso estudo, é importante saber os dados das escolas que estão em funcionamento. Primeiro, vamos contar quantas escolas estão em funcionamento. Para isso, usamos a função value_counts() da biblioteca Pandas. No caso, a tabela do INEP usa os seguintes códigos para identificar a situação de funcionamento: 1-Em atividade, 2-Paralisada, 3-Extinta no ano do censo, 4-Extinta em anos anteriores
+
+    df_mun['TP_SITUACAO_FUNCIONAMENTO'].value_counts()
+
+Como podemos observar, existem escolas que estão paralisadas ou extintas. Para o nosso estudo, vamos considerar apenas as escolas que estão em funcionamento. Para isso, vamos criar um novo DataFrame chamado df_mun_func com apenas as escolas que estão em funcionamento. Para isso, usamos a função loc() da biblioteca Pandas.
+
+    df_mun_func = df_mun.loc[df_mun['TP_SITUACAO_FUNCIONAMENTO'] == 1]
+
+Agora, vamos verificar novamente quantas escolas existem em Uberlândia. Para isso, usamos novamente a função value_counts() da biblioteca Pandas.
+
+    df_mun_func['TP_SITUACAO_FUNCIONAMENTO'].value_counts()
+
+Agora sim, temos um Dataframe limpo. Vamos salva-lo em um novo arquivo .CSV
+
+    df_mun_func.to_csv('C:/Users/.../NOME_DO_ARQUIVO.CSV')
+
+
+
+
 ## Parte 3 - Visualizando os dados
 
 ### 3.a Verificando a instalação dos dados
