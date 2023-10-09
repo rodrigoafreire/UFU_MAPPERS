@@ -5,13 +5,15 @@ import http.client
 from shapely.geometry import Point
 import json
 import urllib.parse
+from geopy.geocoders import Bing
 
 # Replace 'YOUR_API_KEY' with your actual Bing Maps API key
-api_key = 'z3nOPxYlgmXG24uetrkapw1NPvqOo0Kbc8VAq8DPx9Y'
+api_key = 'Atu9sEmErWqKGnh64g94_FOP-xj2jqY7_7XSbt4QDET1AE9mAatv5TCLZ2tZqIIB'
 
 # Load your data into a DataFrame
 df_mun_func = pd.read_csv('E:/GitHub/UFU_MAPPERS/microdados/dados/microdados_uberlandia_em_funcionamento_reduzido.csv', delimiter = ';',
                            encoding = 'iso-8859-1', low_memory=False)
+
 
 # Define a function to geocode an address using Bing Maps Geocoding API
 def geocode_address(address):
@@ -21,9 +23,10 @@ def geocode_address(address):
             'q': address,
             'key': api_key,
         }
-        conn.request("GET", f'/REST/v1/Locations?' + str(address) + '?o=xml&key=' + api_key)
+        conn.request("GET", f'/REST/v1/Locations?' + 'str(address)' + '?o=xml&key=' + api_key)
         response = conn.getresponse()
-        data = response.read().decode('utf-8')
+        print(response)
+        data = response.read()
         result = json.loads(data)
 
         if result.get('resourceSets'):
@@ -36,7 +39,15 @@ def geocode_address(address):
     except Exception as e:
         print(f"Error geocoding address: {address}\nError: {str(e)}")
         return None
-    
+   
+# Step 3: Create a geocoding function using Geopy
+#def geocode_address(address):
+#    geolocator = Bing(api_key='Atu9sEmErWqKGnh64g94_FOP-xj2jqY7_7XSbt4QDET1AE9mAatv5TCLZ2tZqIIB')  # Create a geocoder
+#    location = geolocator.geocode(address)  # Get coordinates from the address
+#    if location:
+#        return Point(location.longitude, location.latitude)  # Return as a Point
+#    else:
+#        return None  # Return None if geocoding fails
 
 # Step 4: Create a new column 'full_address' with the combined address
 df_mun_func['full_address'] = df_mun_func['DS_ENDERECO'] + ' ' + df_mun_func['NU_ENDERECO'] + ' ' + df_mun_func['NO_MUNICIPIO'] + ' ' +  'MG' + ' ' + 'Brasil'
