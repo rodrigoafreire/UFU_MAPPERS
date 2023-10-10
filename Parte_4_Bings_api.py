@@ -8,7 +8,7 @@ import urllib.parse
 from geopy.geocoders import Bing
 
 # Replace 'YOUR_API_KEY' with your actual Bing Maps API key
-api_key = 'Atu9sEmErWqKGnh64g94_FOP-xj2jqY7_7XSbt4QDET1AE9mAatv5TCLZ2tZqIIB'
+api_key = 'substitua_aqui_pelo_seu_api_key'
 
 # Load your data into a DataFrame
 df_mun_func = pd.read_csv('E:/GitHub/UFU_MAPPERS/microdados/dados/microdados_uberlandia_em_funcionamento_reduzido.csv', delimiter = ';',

@@ -6,7 +6,7 @@ from shapely.geometry import Point  # For working with geometries
 import requests
 
 #API Key
-api_key = "14T33thb12omeotZtuAcBAXBmgNecQBH"
+api_key = "substiua_aqui_pelo_seu_api_key"
 
 # Step 2: Load your data into a DataFrame
 # Replace 'your_table.csv' with the path to your data file (e.g., a CSV file)

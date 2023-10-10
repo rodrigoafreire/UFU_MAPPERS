@@ -5,10 +5,10 @@ import googlemaps
 from shapely.geometry import Point
 
 # Replace 'YOUR_API_KEY' with your actual Google Maps Geocoding API key
-api_key = 'AIzaSyDVbqb2RE8a7GUVnkl0TvBfgjKrOIP6t78'
+api_key = 'substitua_aqui_pelo_seu_api_key'
 
 # Load your data into a DataFrame
-df_mun_func = pd.read_csv('E:/GitHub/UFU_MAPPERS/microdados/dados/microdados_uberlandia_em_funcionamento_reduzido.csv', delimiter = ';',
+df_mun_func = pd.read_csv('E:/GitHub/UFU_MAPPERS/microdados/dados/microdados_uberlandia_em_funcionamento.csv', delimiter = ';',
                            encoding = 'iso-8859-1', low_memory=False)
 
 # Initialize the Google Maps Geocoding client
@@ -20,6 +20,7 @@ def geocode_address(address):
         geocode_result = gmaps.geocode(address)
         if geocode_result:
             location = geocode_result[0]['geometry']['location']
+            print(location)
             return Point(location['lng'], location['lat'])
         else:
             return None
