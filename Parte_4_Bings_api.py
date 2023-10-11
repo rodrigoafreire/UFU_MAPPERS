@@ -31,6 +31,7 @@ def geocode_address(address):
 
         if result.get('resourceSets'):
             locations = result['resourceSets'][0]['resources']
+            print(result)
             if locations:
                 location = locations[0]['point']
                 return Point(location['coordinates'][1], location['coordinates'][0])
@@ -40,15 +41,6 @@ def geocode_address(address):
         print(f"Error geocoding address: {address}\nError: {str(e)}")
         return None
    
-# Step 3: Create a geocoding function using Geopy
-#def geocode_address(address):
-#    geolocator = Bing(api_key='Atu9sEmErWqKGnh64g94_FOP-xj2jqY7_7XSbt4QDET1AE9mAatv5TCLZ2tZqIIB')  # Create a geocoder
-#    location = geolocator.geocode(address)  # Get coordinates from the address
-#    if location:
-#        return Point(location.longitude, location.latitude)  # Return as a Point
-#    else:
-#        return None  # Return None if geocoding fails
-
 # Step 4: Create a new column 'full_address' with the combined address
 df_mun_func['full_address'] = df_mun_func['DS_ENDERECO'] + ' ' + df_mun_func['NU_ENDERECO'] + ' ' + df_mun_func['NO_MUNICIPIO'] + ' ' +  'MG' + ' ' + 'Brasil'
 df_mun_func['full_address'] = df_mun_func['full_address'].str.replace(' ', '%')
@@ -74,7 +66,7 @@ for idx, row in gdf.iterrows():
         folium.Marker(location=[row.geometry.y, row.geometry.x], popup=row['NO_ENTIDADE']).add_to(m)
 
 # Step 8: Save the map as an HTML file or display it in a Jupyter Notebook
-m.save('E:/GitHub/UFU_MAPPERS/microdados/dados/building_locations_map_bing.html')
+#m.save('E:/GitHub/UFU_MAPPERS/microdados/dados/building_locations_map_bing.html')
 
 # The resulting HTML file will contain a map with markers for building locations.
 
