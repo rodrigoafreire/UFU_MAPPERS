@@ -517,9 +517,22 @@ Também podemos salvar o mapa em um arquivo shp. Para isso, usamos a função to
     # O arquivo HTML resultante conterá um mapa com marcadores para as localizações dos edifícios.
 
 
+### Parte 4.b - Brincando com o mapa (estilos e cores)
+
+O mapa gerado com o código fornecido apresenta um estilo bastante tradicional de visualização. No entanto, é possível alterar o estilo do mapa, dos marcadores e dos textos de descrição dos marcadores. Para isso, podemos consultar a documentação da biblioteca folium. 
 
 
-## Observações>
+Por exemplo, se quisermos mudar o tipo do marcador, podemos alterar nosso código para:
+
+    for idx, row in gdf.iterrows():
+        if not pd.isnull(row['geometry']):
+            folium.Marker(location=[row.geometry.y, row.geometry.x], popup=row['NO_ENTIDADE'], icon=folium.Icon(color='blue', icon='school', prefix='fa')).add_to(m)
+
+
+
+
+
+## Observações
 
 
 

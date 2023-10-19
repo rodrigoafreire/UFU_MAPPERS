@@ -5,7 +5,7 @@ import googlemaps
 from shapely.geometry import Point
 
 # Replace 'YOUR_API_KEY' with your actual Google Maps Geocoding API key
-api_key = 'substitua_aqui_pelo_seu_api_key'
+api_key = 'seuapi aqui'
 
 # Load your data into a DataFrame
 df_mun_func = pd.read_csv('E:/GitHub/UFU_MAPPERS/microdados/dados/microdados_uberlandia_em_funcionamento.csv', delimiter = ';',
@@ -38,6 +38,10 @@ df_mun_func['geometry'] = df_mun_func['full_address'].apply(geocode_address)
 # Step 6: Create a GeoDataFrame from the DataFrame
 gdf = gpd.GeoDataFrame(df_mun_func, geometry='geometry')
 
+# Step 6.a Save GeoDataFrame to a Shapefile
+gdf.to_file('E:/GitHub/UFU_MAPPERS/microdados/dados/uberlandia_em_func_google.shp', driver='ESRI Shapefile')
+
+
 # Step 7: Create a map using Folium and add markers for building locations
 # Replace 'latitude' and 'longitude' with your desired map center coordinates
 # No caso de Uberlandia, as coordenadas são: -18.9186, -48.2772
@@ -52,7 +56,7 @@ for idx, row in gdf.iterrows():
         folium.Marker(location=[row.geometry.y, row.geometry.x], popup=row['NO_ENTIDADE']).add_to(m)
 
 # Step 8: Save the map as an HTML file or display it in a Jupyter Notebook
-m.save('E:/GitHub/UFU_MAPPERS/microdados/dados/building_locations_map_google.html')
+m.save('E:/GitHub/UFU_MAPPERS/microdados/dados/building_locations_map_google_2.html')
 
 # The resulting HTML file will contain a map with markers for building locations.
 
