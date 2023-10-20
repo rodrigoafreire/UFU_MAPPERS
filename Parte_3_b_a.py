@@ -17,16 +17,13 @@ tipos_escolas = {
 # Contar o número de escolas em cada categoria
 labels = df['TP_DEPENDENCIA'].unique()
 
-# Vamos gerar uma legenda para cada tipo de escola:
-for label in labels:
-    tipos_escolas[label]
-    print(tipos_escolas[label])
-  
+df['TP_DEPENDENCIA'] = df['TP_DEPENDENCIA'].map(tipos_escolas)
+
 # Contar o número de escolas em cada categoria
 contagem_escolas = df['TP_DEPENDENCIA'].value_counts()
-
+print(contagem_escolas)
 # Definir rótulos e valores para o gráfico
-#tipos_escolas = contagem_escolas.index
+tipos_escolas = contagem_escolas.index
 #quantidade_escolas = contagem_escolas.values
 
 # Vamos imprimir os valores para ver como eles estão:
@@ -36,8 +33,12 @@ print(tipos_escolas)
 cores = ['skyblue', 'lightgreen', 'lightcoral', 'orange']
 
 # Criar um gráfico de barras
-plt.figure(figsize=(8, 6))
-plt.pie(contagem_escolas, labels=tipos_escolas, colors=cores, autopct='%1.1f%%')
+plt.figure(figsize=(6, 6))
+
+plt.pie(contagem_escolas, colors=cores, autopct='%1.1f%%')
+
+# Inserir uma legenda
+plt.legend(title="Legendas", labels=tipos_escolas, loc="center left", bbox_to_anchor=(1, 0, 0.5, 1))
 
 # Adicionar rótulos e título
 plt.title('Distribuição de Escolas por Tipo de Dependência')

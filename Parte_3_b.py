@@ -47,3 +47,4 @@ plt.xticks(rotation=45)
 
 # Mostrar o gráfico
 plt.show()
+plt.savefig('E:/GitHub/UFU_MAPPERS/microdados/dados/grafico_1.png')
