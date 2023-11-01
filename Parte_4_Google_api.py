@@ -4,6 +4,8 @@ import folium
 import googlemaps
 from shapely.geometry import Point
 
+
+
 # Replace 'YOUR_API_KEY' with your actual Google Maps Geocoding API key
 api_key = 'seuapi aqui'
 
