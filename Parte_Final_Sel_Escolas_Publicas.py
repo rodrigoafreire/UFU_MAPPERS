@@ -29,7 +29,7 @@ def geocode_address(address):
         return Point(location.longitude, location.latitude)  # Return as a Point
     else:
         return None  # Return None if geocoding fails
-
+ 
 # Step 4: Create a new column 'full_address' with the combined address
 df_mun_publicas['full_address'] = 'Brasil' + ', ' + 'MG' + ', ' + df_mun_publicas['NO_MUNICIPIO'] + ', ' + df_mun_publicas['DS_ENDERECO'] + ', ' + df_mun_publicas['NU_ENDERECO']
 df_mun_particulares['full_address'] = 'Brasil' + ', ' + 'MG' + ', ' + df_mun_particulares['NO_MUNICIPIO'] + ', ' + df_mun_particulares['DS_ENDERECO'] + ', ' + df_mun_particulares['NU_ENDERECO']
