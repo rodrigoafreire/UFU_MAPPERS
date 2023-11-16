@@ -9,16 +9,17 @@ from shapely.geometry import Point  # Para trabalhar com geometrias
 import googlemaps  # Para a API do Google Maps
 
 # Carregar a chave da API do Google
-with open('E:/GitHub/UFU_MAPPERS/Config/Key_Google_API.txt', 'r') as arquivo_chave_api:
+# Nao salve a API diretamente no código-fonte. Recomenda-se salvar a chave em um arquivo de texto e carregá-la no código. Assim, você pode compartilhar o código sem compartilhar a chave.
+with open('.../Key_Google_API.txt', 'r') as arquivo_chave_api:
     chave_api = arquivo_chave_api.read()
 print(chave_api)
 
 # Passo 2: Carregar os dados em um DataFrame
 # Substitua 'seu_arquivo.csv' pelo caminho do seu arquivo de dados (por exemplo, um arquivo CSV)
-df_mun_func = pd.read_csv('E:/GitHub/UFU_MAPPERS/microdados/dados/microdados_uberlandia_em_funcionamento.csv', 
+df_mun_func = pd.read_csv('.../microdados_uberlandia_em_funcionamento.csv', 
                           delimiter=';', encoding='iso-8859-1', low_memory=False)
 
-# Seleção de escolas
+# Seleção de escolas Publicas (Federal, Estadual e Municipal)
 selecao = (df_mun_func['TP_DEPENDENCIA'] == 1) | (df_mun_func['TP_DEPENDENCIA'] == 2) | (df_mun_func['TP_DEPENDENCIA'] == 3)
 df_mun_publicas = df_mun_func.loc[selecao]
 df_mun_particulares = df_mun_func.loc[~selecao]
@@ -53,11 +54,11 @@ df_mun_particulares['full_address'] = 'Brasil' + ', ' + 'MG' + ', ' + df_mun_par
 df_mun_publicas['geometry'] = df_mun_publicas['full_address'].apply(geocode_address)
 
 # Salvar os dados de escolas públicas
-df_mun_publicas.to_csv('E:/GitHub/UFU_MAPPERS/microdados/dados/UDI_em_funcionamento_publicas.csv', sep=';', encoding='iso-8859-1', index=False)
+df_mun_publicas.to_csv('.../Em_funcionamento_publicas.csv', sep=';', encoding='iso-8859-1', index=False)
 
 # Passo 6: Criar um GeoDataFrame a partir do DataFrame e salvar em formato SHP
 gdf_publicas = gpd.GeoDataFrame(df_mun_publicas, geometry='geometry')
-gdf_publicas.to_file('E:/GitHub/UFU_MAPPERS/microdados/SHP/UDI_em_funcionamento_publicas.shp', driver='ESRI Shapefile')
+gdf_publicas.to_file('.../Em_funcionamento_publicas.shp', driver='ESRI Shapefile')
 
 # Passo 7: Criar um mapa usando Folium e adicionar marcadores para as localizações das escolas
 # Substitua 'latitude' e 'longitude' pelas coordenadas desejadas do centro do mapa
@@ -71,6 +72,6 @@ for idx, row in gdf_publicas.iterrows():
         folium.Marker(location=[row.geometry.y, row.geometry.x], popup=row['NO_ENTIDADE'], icon=folium.Icon(color='green', icon='school', prefix='fa')).add_to(m)
 
 # Passo 8: Salvar o mapa como um arquivo HTML ou exibi-lo em um Jupyter Notebook
-m.save('E:/GitHub/UFU_MAPPERS/microdados/dados/mapa_localizacoes_escolares.html')
+m.save('.../mapa_localizacoes_escolas.html')
 
 # O arquivo HTML resultante conterá um mapa com marcadores para as localizações das escolas.

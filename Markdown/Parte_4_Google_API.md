@@ -33,98 +33,114 @@ A API do Google Maps é uma ferramenta poderosa para desenvolvedores que permite
 ---
 ---
 ---
-## Utilizando a API do GoogleMaps 
 
-```
-Este guia serve como uma introdução básica à API do Google Maps, fornecendo informações essenciais para começar a usar este poderoso serviço em seus projetos.
-```
 
-### Passo 1: Importação de Bibliotecas Necessárias
+```markdown
+# Tutorial de Mapeamento Geoespacial de Escolas
 
-Importamos as bibliotecas necessárias para manipulação de dados, dados geoespaciais e criação de mapas.
+Este tutorial demonstra como realizar a geocodificação de endereços de escolas usando a API do Google, gerar um GeoDataFrame e salvar os dados em formato SHP.
+
+### Passo 1: Importar Bibliotecas Necessárias
 
 ```python
 import pandas as pd  # Para manipulação de dados
 import geopandas as gpd  # Para dados geoespaciais
 import folium  # Para criar mapas
-from geopy.geocoders import Nominatim  # Para geocodificação de endereços
 from shapely.geometry import Point  # Para trabalhar com geometrias
+import googlemaps  # Para a API do Google Maps
 ```
+**Dica**: Importar as bibliotecas corretas é fundamental para trabalhar com dados geoespaciais.
 
-### Passo 2: Carregar os Dados
-
-Carregamos os dados em um DataFrame do Pandas. Substitua o caminho pelo caminho do seu arquivo de dados.
+### Carregar a Chave da API do Google
 
 ```python
-df_mun_func = pd.read_csv('caminho_do_arquivo/microdados_uberlandia_em_funcionamento.csv', delimiter=';', encoding='iso-8859-1', low_memory=False)
+with open('E:/GitHub/UFU_MAPPERS/Config/Key_Google_API.txt', 'r') as arquivo_chave_api:
+    chave_api = arquivo_chave_api.read()
+print(chave_api)
 ```
+**Dica**: Mantenha sua chave de API segura e não a compartilhe publicamente.
 
-### Passo 3: Criação de uma Função de Geocodificação
-
-Criamos uma função para geocodificar endereços usando a biblioteca Geopy.
+### Passo 2: Carregar os Dados em um DataFrame
 
 ```python
-def geocode_address(address):
-    geolocator = Nominatim(user_agent="uberlandia_locator")  # Criar um geocodificador
-    location = geolocator.geocode(address)  # Obter coordenadas do endereço
-    if location:
-        print(Point(location.longitude, location.latitude))
-        return Point(location.longitude, location.latitude)  # Retornar como um Ponto
-    else:
-        return None  # Retornar None se a geocodificação falhar
+df_mun_func = pd.read_csv('E:/GitHub/UFU_MAPPERS/microdados/dados/microdados_uberlandia_em_funcionamento.csv', delimiter=';', encoding='iso-8859-1', low_memory=False)
+```
+**Dica**: Certifique-se de que o caminho para o arquivo CSV está correto.
+
+### Seleção de Escolas e Exibição de Totais
+
+```python
+selecao = (df_mun_func['TP_DEPENDENCIA'] == 1) | (df_mun_func['TP_DEPENDENCIA'] == 2) | (df_mun_func['TP_DEPENDENCIA'] == 3)
+df_mun_publicas = df_mun_func.loc[selecao]
+df_mun_particulares = df_mun_func.loc[~selecao]
+print("Total de escolas: " + str(df_mun_func['CO_ENTIDADE'].count()))  
+print("Total de escolas públicas: " + str(df_mun_publicas['CO_ENTIDADE'].count()))
+print("Total de escolas particulares: " + str(df_mun_particulares['CO_ENTIDADE'].count()))
 ```
 
-### Passo 4: Criação de uma Coluna com Endereço Completo
+### Inicializar o Cliente de Geocodificação do Google Maps
 
-Combinamos dados de endereço para formar um endereço completo.
+```python
+gmaps = googlemaps.Client(key=chave_api)
+```
+
+### Função para Geocodificar um Endereço
+
+```python
+def geocode_address(endereco):
+    try:
+        resultado_geocode = gmaps.geocode(endereco)
+        if resultado_geocode:
+            localizacao = resultado_geocode[0]['geometry']['location']
+            print(localizacao)
+            return Point(localizacao['lng'], localizacao['lat'])
+        else:
+            return None
+    except Exception as e:
+        print(f"Erro ao geocodificar o endereço: {endereco}\nErro: {str(e)}")
+        return None
+```
+
+### Passo 4: Criar uma Nova Coluna com o Endereço Combinado
 
 ```python
 df_mun_publicas['full_address'] = 'Brasil' + ', ' + 'MG' + ', ' + df_mun_publicas['NO_MUNICIPIO'] + ', ' + df_mun_publicas['DS_ENDERECO'] + ', ' + df_mun_publicas['NU_ENDERECO']
 df_mun_particulares['full_address'] = 'Brasil' + ', ' + 'MG' + ', ' + df_mun_particulares['NO_MUNICIPIO'] + ', ' + df_mun_particulares['DS_ENDERECO'] + ', ' + df_mun_particulares['NU_ENDERECO']
 ```
 
-### Passo 5: Aplicação da Função de Geocodificação
-
-Aplicamos a função de geocodificação para criar colunas de geometria.
+### Passo 5: Aplicar a Função de Geocodificação para Criar uma Coluna 'Geometry'
 
 ```python
-df_mun_publicas['geometry'] = df_mun_publicas['full_address'][0:15].apply(geocode_address)
-df_mun_particulares['geometry'] = df_mun_particulares['full_address'][0:15].apply(geocode_address)
+df_mun_publicas['geometry'] = df_mun_publicas['full_address'].apply(geocode_address)
 ```
 
-### Passo 6: Criação de um GeoDataFrame
+### Salvar os Dados de Escolas Públicas
 
-Transformamos os DataFrames em GeoDataFrames.
+```python
+df_mun_publicas.to_csv('E:/GitHub/UFU_MAPPERS/microdados/dados/UDI_em_funcionamento_publicas.csv', sep=';', encoding='iso-8859-1', index=False)
+```
+
+### Passo 6: Criar um GeoDataFrame e Salvar em Formato SHP
 
 ```python
 gdf_publicas = gpd.GeoDataFrame(df_mun_publicas, geometry='geometry')
-gdf_particulares = gpd.GeoDataFrame(df_mun_particulares, geometry='geometry')
+gdf_publicas.to_file('E:/GitHub/UFU_MAPPERS/microdados/SHP/UDI_em_funcionamento_publicas.shp', driver='ESRI Shapefile')
 ```
 
-### Passo 7: Criação de um Mapa com Folium
-
-Criamos um mapa usando Folium e adicionamos marcadores para as localizações das escolas.
+### Passo 7: Criar um Mapa Usando Folium e Adicionar Marcadores
 
 ```python
-map_center = (-18.9186, -48.2772)  # Coordenadas do centro do mapa para Uberlândia
-m = folium.Map(location=map_center, zoom_start=13)
-
-# Loop para adicionar marcadores no mapa
+centro_mapa = (-18.9186, -48.2772)
+m = folium.Map(location=centro_mapa, zoom_start=13)
 for idx, row in gdf_publicas.iterrows():
     if not pd.isnull(row['geometry']):
-        folium.Marker(location=[row.geometry.y, row.geometry.x], popup=row['NO_ENTIDADE'], icon=(folium.Icon(color='green', icon='school', prefix='fa'))).add_to(m)
-
-for idx, row in gdf_particulares.iterrows():
-    if not pd.isnull(row['geometry']):
-        folium.Marker(location=[row.geometry.y, row.geometry.x], popup=row['NO_ENTIDADE'], icon=(folium.Icon(color='lightgray', icon='school', prefix='fa'))).add_to(m)
+        folium.Marker(location=[row.geometry.y, row.geometry.x], popup=row['NO_ENTIDADE'], icon=folium.Icon(color='green', icon='school', prefix='fa')).add_to(m)
 ```
 
-### Passo 8: Salvamento do Mapa
-
-Salvamos o mapa como um arquivo HTML.
+### Passo 8: Salvar o Mapa Como um Arquivo HTML
 
 ```python
-m.save('caminho_para_salvar_o_arquivo/mapa_de_localizacoes.html')
+m.save('E:/GitHub/UFU_MAPPERS/microdados/dados/mapa_localizacoes_escolares.html')
 ```
 
 O arquivo HTML resultante conterá um mapa com marcadores para as localizações das escolas.
