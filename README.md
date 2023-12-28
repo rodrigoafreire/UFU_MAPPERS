@@ -1,11 +1,15 @@
-# UFU_MAPPERS
+# UFU MAPPERS
 Repositório destinado ao capítulo do YouthMappers da Universidade Federal de Uberlandia, UFUMAPPERS
 
 
 Acesse nosso conteúdo: 
+
 [Instalação do Python e Configuração](/Oficina_Mapeamento_Parte_1.md)
+
 [Adquirindo dados e tratamento](/Oficina_Mapeamento_Parte_2.md)
+
 [Visualização dos dados](/Oficina_Mapeamento_Parte_3.md)
+
 [Gerando o primeiro mapa](/Oficina_Mapeamento_Parte_4.md)
 
 Veja o mapa das escolas de Uberlândia:
