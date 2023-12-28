@@ -5,21 +5,21 @@ import folium
 # Carregar o GeoDataFrame já salvo em SHP
 gdf = gpd.read_file('E:/GitHub/UFU_MAPPERS/microdados/SHP/UDI_em_funcionamento_publicas.shp')
 
-# Step 7: Create a map using Folium and add markers for building locations
-# Replace 'latitude' and 'longitude' with your desired map center coordinates
+# Crie um mapa usando Folium e adicione marcadores para os locais dos prédios
+# Substitua 'latitude' e 'longitude' pelas coordenadas do centro do mapa desejado
 # No caso de Uberlandia, as coordenadas são: -18.9186, -48.2772
 map_center = (-18.9186, -48.2772)
 m = folium.Map(location=map_center, zoom_start=13)
 
-print(gdf.head(40))
-
-# Step 1: Determine the number of subsets and calculate the approximate size of each subset
+# Nesse exemplo, vamos criar cores diferentes para as escolas de forma aleatoria, mas você pode criar cores diferentes para cada escola de acordo com o atributo desejado.
+# Por exemplo, você pode criar cores de acordo com o tipo de escola (municipal, estadual, federal, etc) ou de acordo com o número de alunos matriculados.
+# Passo 1: Determine o número de subconjuntos e calcule o tamanho aproximado de cada subconjunto
 num_subsets = 7
 subset_size = len(gdf) // num_subsets
 remaining_locations = len(gdf) % num_subsets
 
-# Step 2: Define unique colors for each subset
-colors = ['red', 'blue', 'green', 'orange', 'purple', 'pink', 'cadetblue']  # Add more colors as needed
+# Passo 2: Defina cores únicas para cada subconjunto
+colors = ['red', 'blue', 'green', 'orange', 'purple', 'pink', 'cadetblue']# Adicione mais cores conforme necessário
 
 # Atribuir as cores para os mapeadores
 Atrs = ['Rodrigo', 'Mauricio', 'Bento', 'Deborah', 'Iago', 'Maria Cecilia', 'Renato']
@@ -51,8 +51,8 @@ for i in range(num_subsets):
     start_idx = subset_end
     m.save('E:/GitHub/UFU_MAPPERS/microdados/dados/Escolas_Publicas_'+ Atr + '.html')
 
-# Step 8: Save the map as an HTML file or display it in a Jupyter Notebook
-m.save('E:/GitHub/UFU_MAPPERS/microdados/dados/Escolas_Publicas_2.html')
+# Step 8: Salvar o mapa em HTML para visualização. Colocar o  caminho do arquivo desejado.
+m.save('E:/caminho/Meu_mapa.html')
 
-# The resulting HTML file will contain a map with markers for building locations.
+# O mapa resultante em HTML conterá marcadores para os locais dos prédios.
 
