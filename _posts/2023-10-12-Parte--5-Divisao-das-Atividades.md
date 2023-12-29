@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Mapa Interativo e Divisão de Atividades para mapeamento
-categories: [Miscellaneous, Jekyll]
+categories: [Escolas, Python]
 ---
 
 Este tutorial demonstra como criar um mapa interativo utilizando Python, Geopandas e Folium. O objetivo é mapear localizações específicas com marcadores coloridos em um mapa.
