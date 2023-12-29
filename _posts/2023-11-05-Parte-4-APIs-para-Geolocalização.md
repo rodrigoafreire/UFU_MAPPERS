@@ -1,5 +1,8 @@
-
-### Parte 4 - Gerando um mapa com a localização das escolas
+---
+layout: post
+title: Parte 4 - APIS e Geolocalização das Escolas
+categories: [Escolas, Python]
+---
 
 Vamos gerar um mapa com a localização das escolas. Para isso, vamos usar a biblioteca folium. A biblioteca folium é uma biblioteca Python que facilita a criação de mapas interativos e visualizações geoespaciais. No entanto, existem diversas possibilidades para gerar os mapas pois precisamos de uma ferramenta *geocoding* para transformar o endereço em coordenadas geográficas. Diversas empresas oferecem esse serviço, como o Google Maps, o Bing Maps e a Tomtom. Em geral, é possível usar os serviços de forma gratuita até um certo número de requisições. Também existe uma ferramenta de geocoding do OpenStreetMap, chama Nominatim, que é gratuita. Como veremos mais a frente cada um dos serviços tem suas vantagens e desvantagens. No caso do Openstreetmap, ele depende do mapeamento realizado de forma colaborativa. Por isso, é possível que alguns endereços não sejam encontrados. 
 

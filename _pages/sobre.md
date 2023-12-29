@@ -4,26 +4,25 @@ title: Sobre
 permalink: /sobre/
 ---
 
-[Reverie](https://github.com/amitmerchant1990/reverie) is a Jekyll theme which is simple and opinionated. It's actually a fork of [jekyll-now](https://github.com/barryclark/jekyll-now) with some additional features and personal touches which I've implemented to suit my needs for [my blog](https://www.amitmerchant.com).
+Fundado em 2022, o UFUMappers é um capítulo local do YouthMappers hospedado na [Faculdade de Arquitetura, Urbanismo e Design](https://www.faued.ufu.br) da [Universidade Federal de Uberlândia](https://www.ufu.br). 
 
-This is a plug-and-play Jekyll theme which you can use on GitHub Pages without even setting up a local environment.
+Somos um grupo de mapeamento voluntário que visa promover o mapeamento colaborativo e o uso de dados geoespaciais na comunidade acadêmica e na sociedade em geral.
 
-## Features
+Atualmente focamos no mapeamento da cidade de Uberlândia, Minas Gerais, Brasil, enquanto desenvolvemos nossos materiais e habilidades.
 
-- Command-line free fork-first workflow, using GitHub.com to create, customize and post to your blog
-- Fully responsive and mobile optimized base theme
-- Sass/Coffeescript support using Jekyll 2.0
-- Free hosting on your GitHub Pages user site
-- All the SEO goodies comes in-built
-- Markdown blogging
-- Syntax highlighting using Pygments
-    - [Dracula syntax theme](https://draculatheme.com/) included
-- Disqus commenting
-- Google Analytics integration
-- Fuzzy search across blog posts
-- Pagination of posts works out-of-the-box.
-- Categorize posts out-of-the box
-- RSS Feed
-- In-built sitemap
 
-Learn more about it [here](https://github.com/amitmerchant1990/reverie) on how to get started.
+## Nossos objetivos
+
+- Colaborar com o mapeamento de áreas de interesse para a comunidade acadêmica e a sociedade em geral por meio do [OpenStreetMap](https://www.openstreetmap.org).
+- Colaborar com o mapeamento de regiões utilizadas nas disciplinas do curso de Arquitetura e Urbanismo da Universidade Federal de Uberlândia.
+- Aprimorar a representação visual de dados geoespaciais por meio da experiência do usuário e do design de mapas juntamente com o curso de Design da Universidade Federal de Uberlandia.
+- Hospedar eventos de mapeamento e workshops para a comunidade acadêmica e a sociedade em geral.
+- Treinar estudantes de graduação, pós-graduação e qualquer pessoa interessada em mapeamento colaborativo e uso de dados geoespaciais.
+- Desenvolver habilidades de programação e visualização de dados geoespaciais.
+- ...
+
+
+## Encontros
+
+Geralmente, nossos encontros são casuais e abertos a todos. Para saber sobre nossos encontros, siga-nos no [Instagram](https://www.instagram.com/ufumappers/) ou acesse a página de [Eventos](/eventos/).
+
