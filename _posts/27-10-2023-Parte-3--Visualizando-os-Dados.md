@@ -1,4 +1,10 @@
-## Parte 3 - Visualizando os dados
+---
+layout: post
+title: Parte 3 - Visualização dos dados
+categories: [Escolas, Python]
+---
+
+Este post trata da visualização dos dados. O objetivo é gerar gráficos e mapas para visualizar os dados de forma mais clara e objetiva.
 
 ### 3.a Verificando a instalação dos dados
 

@@ -1,6 +1,10 @@
-# Oficina Mapeamento de Escolas - UFUMappers
+---
+layout: post
+title: Parte 1 - Sobre o Python [Instalação e Bibliotecas]
+categories: [Escolas, Python]
+---
 
-## Parte 1 - Instalação do Python e das bibliotecas a serem utilizadas
+Vamos falar um pouco sobre o Python e as bibliotecas que usaremos nessa série de tutoriais.
 
 ### 1.a O que é Python (linguagem de programação)?
 

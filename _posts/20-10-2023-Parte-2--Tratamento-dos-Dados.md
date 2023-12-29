@@ -1,3 +1,11 @@
+---
+layout: post
+title: Parte 2 - Tratamento dos Dados
+categories: [Escolas, Python]
+---
+
+Este post fala sobre o tratamento de dados em arquivos csv ou xls que contenham um volume grande de dados. O objetivo é organizar os dados para facilitar a análise e visualização dos dados.
+
 ## Parte 2 - Levantamento e tratamento dos dados
 
 ### 2.a Adquirindo os dados
