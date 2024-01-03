@@ -10,5 +10,3 @@ Para baixar o arquivo HTML, clique [aqui]()
 
 Para baixar o arquivo SHP, clique [aqui]()
 
-{% include https://github.com/rodrigoafreire/UFU_MAPPERS/blob/gh-pages-test/Arquivos_de_Suporte/HTML/Escolas_Publicas_UDI.html %}
-
