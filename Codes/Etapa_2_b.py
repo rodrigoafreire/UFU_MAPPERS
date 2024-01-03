@@ -5,7 +5,7 @@ import pandas as pd
 # 'delimiter' especifica o caractere usado para separar valores (neste caso, o ponto e vírgula)
 # 'encoding' define a codificação dos caracteres como 'iso-8859-1'
 # 'low_memory=False' é utilizado para carregar eficientemente grandes arquivos
-df_mun = pd.read_csv("E:/GitHub/UFU_MAPPERS/microdados/dados/microdados_uberlandia.csv", delimiter=';', encoding='iso-8859-1', low_memory=False)
+df_mun = pd.read_csv(".../microdados_uberlandia.csv", delimiter=';', encoding='iso-8859-1', low_memory=False)
 
 # Comentários explicando o significado de cada coluna do DataFrame
 # Por exemplo, 'CO_ENTIDADE' é o Código da Escola, 'TP_DEPENDENCIA' o Tipo de Dependência Administrativa, etc.
@@ -18,7 +18,7 @@ df_mun_func = df_mun.loc[df_mun['TP_SITUACAO_FUNCIONAMENTO'] == 1]
 df_mun_func['TP_SITUACAO_FUNCIONAMENTO'].value_counts()
 
 # Salvando os dados filtrados em um novo arquivo CSV
-df_mun_func.to_csv("E:/GitHub/UFU_MAPPERS/microdados/dados/microdados_uberlandia_em_funcionamento_b.csv", sep=';', encoding='iso-8859-1', index=False)
+df_mun_func.to_csv(".../microdados_uberlandia_em_funcionamento_b.csv", sep=';', encoding='iso-8859-1', index=False)
 
 # Comentário explicativo sobre a verificação da quantidade de alunos matriculados
 
