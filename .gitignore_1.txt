@@ -1,4 +1,0 @@
-temp/
-microdados/
-Config/
-codes_tests/
