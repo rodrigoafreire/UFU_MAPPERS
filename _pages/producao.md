@@ -53,4 +53,9 @@ Os códigos que utilizamos em nossaas oficinas e workshops podem ser acessados a
 *Em breve*
 
 
+### Mapas
+
+[Mapa das Escolas Públicas de Uberlândia](https://github.com/rodrigoafreire/UFU_MAPPERS/tree/gh-pages-test/.html)
+
+
 {% include https://github.com/rodrigoafreire/UFU_MAPPERS/blob/gh-pages-test/Arquivos_de_Suporte/HTML/Escolas_Publicas_UDI %}
