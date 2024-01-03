@@ -6,7 +6,7 @@ permalink: /sobre/
 
 # Bem-vindo ao UFUMappers! 🌍
 
-![UFUMappers](/images/logo.png)
+![UFUMappers](/images/logo_small.png)
 
 Fundado em 2022, o **UFUMappers** é um capítulo local do YouthMappers hospedado na [Faculdade de Arquitetura, Urbanismo e Design](https://www.faued.ufu.br) da [Universidade Federal de Uberlândia](https://www.ufu.br). 
 
