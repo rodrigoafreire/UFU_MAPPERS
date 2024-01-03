@@ -4,13 +4,19 @@ title: Nossas Produções e Download
 permalink: /producao/
 ---
 
-### Step 1) Fork Reverie to your User Repository
+Nesta página é possível encontrar alguns arquivos produzidos pelo UFUMappers e que podem ser baixados para uso pessoal ou acadêmico.
 
-Fork [this repository](https://github.com/amitmerchant1990/reverie), then rename the repository to `yourgithubusername.github.io`.
+### Arquivos SHP
+[Localização das Escolas Públicas de Uberlandia](https://github.com/rodrigoafreire/UFU_MAPPERS/Arquivos_de_Suporte/SHP/UDI_em_funcionamento_publicas.zip)
 
-Alternatively, you can use [Use this template](https://github.com/amitmerchant1990/reverie/generate) button if you want to create a repository with a clean commit history which will use Reverie as a template.
+### Arquivos GeoJSON
 
-Your Jekyll blog will often be viewable immediately at <https://yourgithubusername.github.io> (if it's not, you can often force it to build by completing step 2)
+### Planilhas
+
+### PDF
+
+
+
 
 ### Step 2) Customize and view your site
 
