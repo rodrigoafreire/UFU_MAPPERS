@@ -7,7 +7,7 @@ permalink: /producao/
 Nesta página é possível encontrar alguns arquivos produzidos pelo UFUMappers e que podem ser baixados para uso pessoal ou acadêmico.
 
 ### Arquivos SHP
-[Localização das Escolas Públicas de Uberlandia](https://github.com/rodrigoafreire/UFU_MAPPERS/Arquivos_de_Suporte/SHP/UDI_em_funcionamento_publicas.zip)
+[Localização das Escolas Públicas de Uberlandia](/Arquivos_de_Suporte/SHP/UDI_em_funcionamento_publicas.zip)
 
 ### Arquivos GeoJSON
 
