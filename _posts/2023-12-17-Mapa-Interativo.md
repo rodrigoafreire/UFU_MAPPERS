@@ -8,7 +8,7 @@ Essa página possibilita visualizar um mapa interativo das escolas de Uberlândi
 
 Para baixar o arquivo HTML, clique [aqui](https://github.com/rodrigoafreire/UFU_MAPPERS/blob/gh-pages-fix/Arquivos_de_Suporte/HTML/)
 
-Para baixar o arquivo SHP, clique [aqui](https://github.com/rodrigoafreire/UFU_MAPPERS/blob/gh-pages-fix/Arquivos_de_Suporte/SHP) (*Em construção*)
+Para baixar o arquivo SHP, clique [aqui](https://github.com/rodrigoafreire/UFU_MAPPERS/blob/gh-pages-fix/Arquivos_de_Suporte/SHP) 
 
 *Atenção: os mapas abaixo podem apresentar informações incompletas ou imprecisas* Use com cuidado.
 
@@ -16,7 +16,7 @@ Para baixar o arquivo SHP, clique [aqui](https://github.com/rodrigoafreire/UFU_M
 
 ### Mapa com a localização das Escolas Públicas de Uberlândia	
 
-O mapa abaixo foi gerado a partir de dados abertos do INEP e mostra a localização das escolas públicas de Uberlândia. Utilizamos a API do Google Maps para gerar o mapa e a localização das escolas. **Note que o mapa pode apresentar erros de localização, pois a API do Google Maps não é precisa.** No entanto, em nosso estudo, foi a API que apresentou os melhores resultados (cerca de 8 localizações imprecisas)
+O mapa abaixo foi gerado a partir de dados abertos do INEP e mostra a localização das escolas públicas de Uberlândia. Utilizamos a API do Google Maps para gerar o mapa e a localização das escolas. **Note que o mapa pode apresentar erros de localização, pois a API do Google Maps não é precisa.** No entanto, em nosso estudo, foi a API que apresentou os melhores resultados.
 
 <iframe 
   width="100%"

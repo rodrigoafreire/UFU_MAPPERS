@@ -19,14 +19,25 @@ A lista completa de arquivos pode ser acessada aqui. Caso prefira, navegue pelos
 ### Arquivos SHP
 [Localização das Escolas Públicas de Uberlandia](https://github.com/rodrigoafreire/UFU_MAPPERS/tree/gh-pages-test/Arquivos_de_Suporte/SHP/UDI_em_funcionamento_publicas.zip)
 
+[Edificacoes mapeadas pelo UFUMAPPERS e membros do OpenStreetMap](https://github.com/rodrigoafreire/UFU_MAPPERS/tree/gh-pages-test/Arquivos_de_Suporte/SHP/Edificacoes_escolas_mapeadas.zip) *O arquivo pode ser aberto no QGIS. Para visualizar no Google Earth, é necessário converter para KML* 
+
 ### Arquivos GeoJSON
 
-*Em breve*
+[Edificacoes mapeadas pelo UFUMAPPERS e membros do OpenStreetMap](https://github.com/rodrigoafreire/UFU_MAPPERS/tree/gh-pages-test/Arquivos_de_Suporte/GEOJSON/Edificacoes_escolas_mapeadas.geojson)
 
 ### HTML
-[Todas as escolas de Uberlândia](https://github.com/rodrigoafreire/UFU_MAPPERS/tree/gh-pages-test/Arquivos_de_Suporte/HTML/Escolas_Total_UDI.html)
 
-[Escolas Públicas de Uberlândia](https://github.com/rodrigoafreire/UFU_MAPPERS/tree/gh-pages-test/Arquivos_de_Suporte/HTML/Escolas_Publicas_UDI.html)
+[Edificacoes - Escolas Mapeadas](https://github.com/rodrigoafreire/UFU_MAPPERS/tree/gh-pages-test/Arquivos_de_Suporte/HTML/Escolas_edificacoes_UDI.html) (RAW)
+
+[Edificacoes - Escolas Mapeadas](https://github.com/rodrigoafreire/UFU_MAPPERS/tree/gh-pages-test/Arquivos_de_Suporte/HTML/Escolas_edificacoes_UDI.html) (HTML)
+
+[Escolas Públicas de Uberlândia](https://github.com/rodrigoafreire/UFU_MAPPERS/tree/gh-pages-test/Arquivos_de_Suporte/HTML/Escolas_Publicas_UDI.html) (RAW)
+
+[Escolas Públicas de Uberlândia](https://rodrigoafreire.github.io/UFU_MAPPERS/Arquivos_de_Suporte/HTML/Escolas_Publicas_UDI.html) (HTML)
+
+[Todas as escolas de Uberlândia](https://github.com/rodrigoafreire/UFU_MAPPERS/tree/gh-pages-test/Arquivos_de_Suporte/HTML/Escolas_Total_UDI.html) (RAW)
+
+[Todas as escolas de Uberlândia](https://rodrigoafreire.github.io/UFU_MAPPERS/Arquivos_de_Suporte/HTML/Escolas_Total_UDI.html) (HTML)
 
 ### Planilhas
 
