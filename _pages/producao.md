@@ -29,7 +29,7 @@ A lista completa de arquivos pode ser acessada aqui. Caso prefira, navegue pelos
 
 [Edificacoes - Escolas Mapeadas](https://github.com/rodrigoafreire/UFU_MAPPERS/tree/gh-pages-test/Arquivos_de_Suporte/HTML/Escolas_edificacoes_UDI.html) (RAW)
 
-[Edificacoes - Escolas Mapeadas](https://github.com/rodrigoafreire/UFU_MAPPERS/tree/gh-pages-test/Arquivos_de_Suporte/HTML/Escolas_edificacoes_UDI.html) (HTML)
+[Edificacoes - Escolas Mapeadas](https://github.com/rodrigoafreire/UFU_MAPPERS/Arquivos_de_Suporte/HTML/Escolas_edificacoes_UDI.html) (HTML)
 
 [Escolas Públicas de Uberlândia](https://github.com/rodrigoafreire/UFU_MAPPERS/tree/gh-pages-test/Arquivos_de_Suporte/HTML/Escolas_Publicas_UDI.html) (RAW)
 
