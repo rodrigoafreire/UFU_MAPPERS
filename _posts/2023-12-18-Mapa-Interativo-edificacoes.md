@@ -13,6 +13,7 @@ Para baixar o arquivo SHP, clique [aqui](https://github.com/rodrigoafreire/UFU_M
 *Atenção: os mapas abaixo podem apresentar informações incompletas ou imprecisas* Use com cuidado.
 
 **Clique para abrir em tela cheia**
+
 [Abrir em Tela Cheia](https://rodrigoafreire.github.io/UFU_MAPPERS/Arquivos_de_Suporte/HTML/Escolas_edificacoes_UDI.html)
 
 É possível utilizar a busca das escolas pelo nome. Inicie sempre com o tipo
