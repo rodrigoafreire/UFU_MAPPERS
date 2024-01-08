@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Parte 5 - Mapa Interativo das esoolas existentes
+title: Parte 5 - Mapa Interativo das escolas existentes
 categories: [Escolas, Python]
 ---
 
