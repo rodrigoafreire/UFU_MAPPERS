@@ -23,7 +23,7 @@ Para baixar o arquivo SHP, clique [aqui](https://github.com/rodrigoafreire/UFU_M
 * EMEF = Escola Municipal de Ensino Fundamental
  
 
-**Autores:** Deborah, Iago, Maurício, Maria Cecília, Rodrigo e Ygor.
+**Autores:** Deborah Bonuti Gonçalves, Iago Piccello, Maurício Rodrigues de Sousa, Maria Cecília Gomes Lopes, Rodrigo Argenton Freire, Ygor Henrique Bento 
 
 O mapa abaixo foi gerado a partir de dados abertos do INEP e mostra a localização das escolas públicas de Uberlândia. As escolas foram mapeadas pelos membros do UFUMappers manualmente e/ou com o auxílio da IA. 
 

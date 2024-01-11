@@ -12,7 +12,9 @@ Para baixar o arquivo SHP, clique [aqui](https://github.com/rodrigoafreire/UFU_M
 
 *Atenção: os mapas abaixo podem apresentar informações incompletas ou imprecisas* Use com cuidado.
 
-**Autores:** Deborah, Iago, Maurício, Maria Cecília, Rodrigo e Ygor.
+**Autores:** Deborah Bonuti Gonçalves, Iago Piccello, Maurício Rodrigues de Sousa, Maria Cecília Gomes Lopes, Rodrigo Argenton Freire, Ygor Henrique Bento 
+
+
 
 ### Mapa com a localização das Escolas Públicas de Uberlândia	
 
