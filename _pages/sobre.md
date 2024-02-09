@@ -19,7 +19,7 @@ Atualmente focamos no mapeamento da cidade de Uberlândia, Minas Gerais, Brasil,
 <iframe 
   width="100%"
   height="600"
-  src="https://rodrigoafreire.github.io/UFU_MAPPERS/Arquivos_de_Suporte/HTML/Escolas_edificacoes_UDI"
+  src="https://rodrigoafreire.github.io/UFU_MAPPERS/Arquivos_de_Suporte/PDF/apresentacao.pdf"
   frameborder="0"
   allowfullscreen>
 </iframe>
